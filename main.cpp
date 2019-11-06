@@ -27,16 +27,19 @@ Commands evaluateCommand(string str){
 }
 queue<string> evaluateAtr(string atr){
     queue<string> q;
-    char c=atr[0];
-    int i=0;
+    int i=1;
+    char c=atr[i];
     string temp;
     while(c!='\0'){
-        while(c!=' '){
+        while(c!=' ' && c!='\0'){
             temp.append(1,c);
             i++;
             c=atr[i];
         }
         q.push(temp);
+        temp="";
+        i++;
+        c=atr[i];
     }
     return q;
 }
